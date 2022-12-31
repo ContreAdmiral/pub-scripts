@@ -1,0 +1,37 @@
+::::::::::::::::::: Get total Size by Date ::::::::::::::::::::::::::::::
+du -cmsh /usr/local/*/*
+du -cmsh /usr/local/Stall*/2018-02-08
+
+::::::::::::::::::: Get File Count By Day :::::::::::::::::::::::::::::::
+cd /usr/local/
+find . -type f -printf "%h\n" | cut -d/ -f-3 | sort | uniq -c
+
+
+
+
+ :::::::::::::::::::::::::::::: Dik Format :::::::::::::::::::::::::::::::
+# make sure this is running on the correct drive...
+ls /dev/sd*
+# find the first partion on the drive i.e. /dev/sdc1
+sudo mkfs.ext4 /dev/sdb1
+sudo blkid
+# add the mount to fstab
+UUID=5de2ac9a-51dd-4633-8fe6-b4de28b4e872 /usr/local ext4	defaults	0	0
+UUID=j5wRr3-ccU0-y4Ol-4pEr-4H4b-ERp1-iqhah3 /mnt/external ext4 defaults 0       0
+# Raid Data Drive
+UUID=2b4186e7-0ddc-41c3-8288-3d67d2e1f038 /mnt/dataraid5 ext4   defaults        0       0
+
+
+de724a5e-9a39-46c2-a92d-97e652d2fd4a
+
+############### notes #####################
+sudo lsblk
+fdisk /dev/sdb
+
+############# RAID CHECK ##################
+mdadm -D /dev/md1
+
+du -cmsh /usr/local/* | grep total
+
+sudo egrep -v "^$|^#" /etc/zabbix/zabbix_proxy.conf
+
