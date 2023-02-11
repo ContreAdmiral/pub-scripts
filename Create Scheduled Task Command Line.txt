@@ -1,0 +1,1 @@
+SchTasks /ru "SYSTEM" /Create /SC MONTHLY /mo FIRST /d SAT /TN "Microsoft\Windows\backup\OffsiteBackups-VHD" /TR "C:\Windows\Backups\OffsiteBackups.bat" /ST 01:00 /f
